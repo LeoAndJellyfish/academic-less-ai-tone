@@ -1,0 +1,6 @@
+* text=auto
+/SKILL.md -text
+/references/research-basis.md -text
+/references/retained-rewrite-examples.md -text
+/scripts/claim_preflight.py -text
+/scripts/measure_body.py -text
