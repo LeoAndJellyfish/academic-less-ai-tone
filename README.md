@@ -1,6 +1,6 @@
 # academic-less-ai-tone
 
-面向中文学术论文、研究报告、学术讲座及技术论坛稿的写作编辑技能。V21 版本先核对主张和证据，再修订有据但程式化的句群，最后检查对象、比较方向、限定、数值归属、引文和完整段落的衔接。
+面向中文学术论文、研究报告、学术讲座及技术论坛稿的写作编辑技能。当前版本 V22 先核对主张和证据，按读者与体裁选择惯用表达，再修订有据但程式化的句群，检查对象、比较方向、限定、数值归属、引文和完整段落的衔接。
 
 该技能适用于新稿审查和已有稿件改写。用户提出改写要求时，主要交付物为可直接使用的修订正文；需要作者核实的事实另列。
 
@@ -27,6 +27,18 @@ git clone https://github.com/LeoAndJellyfish/academic-less-ai-tone.git "$env:USE
 > 请按 academic-less-ai-tone 修订以下讨论段。事实卡是本次改写的依据。保留比较方向、统计口径、作者解释和引用；交付完整修订段落，待核事实另列。
 
 技能按段落处理证据和表达。它审查空泛的转向、重复提示语、归属提示连用、生硬名词化及跨句指代，同时保留真实争论、操作定义和必要的统计限定。
+
+## V22 更新
+
+2026-10-07 发布。本次修订依据工作进度摘要与信息检索课程汇报中的实际使用反馈，整合五项表达规则：
+
+- 使用目标读者及本学科熟悉的惯用说法，解释必要术语。
+- 按阅读目的安排正文、备答和附录，保留指定信息与关键条件。
+- 围绕共同问题组织句群，明确方法、结果与下一问题的联系。
+- 展开内部流程标签和紧缩名词，写清实际对象、动作及结果。
+- 直接交代具体结果和资料缺口，保持完成报告、检查结果与用户确认的区别。
+
+完整改写逐项保留有效信息。摘要、选编和删减依用户约定执行；计数单位及专业术语按语境核对。补充示例见 [`references/retained-rewrite-examples.md`](references/retained-rewrite-examples.md)，依据与效果状态见 [`references/research-basis.md`](references/research-basis.md)。下节保留 V21 的历史开发评估。
 
 ### 辅助脚本
 
@@ -62,6 +74,6 @@ python scripts/measure_body.py --input input.json --min 10 --max 80
 
 ## 版本与文件
 
-本仓库的五个技能文件逐字节保留最终封存的 V21 内容。各文件 SHA-256 见 [`SHA256SUMS`](SHA256SUMS)。`references/research-basis.md` 保留开发时的历史记录，其中一个本地路径仅作为来源线索，外部安装无需访问该路径。
+当前技能文件的 SHA-256 见 [`SHA256SUMS`](SHA256SUMS)，安装包按 GitHub Releases 的版本标签提供。V21 封存版本保留在 [v21 标签](https://github.com/LeoAndJellyfish/academic-less-ai-tone/tree/v21)与原发布附件中。`references/research-basis.md` 的历史记录按当时版本解释，外部技能的研究记录按文档名称索引。
 
 代码和原创文档按 [MIT License](LICENSE) 发布。引用或复用外部研究资料时，遵守其各自的许可与引文要求。
