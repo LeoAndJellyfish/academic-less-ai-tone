@@ -1,6 +1,6 @@
 # academic-less-ai-tone
 
-面向中文学术论文、研究报告、学术讲座及技术论坛稿的写作编辑技能。当前版本 V22 先核对主张和证据，按读者与体裁选择惯用表达，再修订有据但程式化的句群，检查对象、比较方向、限定、数值归属、引文和完整段落的衔接。
+面向中文学术论文、研究报告、学术讲座及技术论坛稿的写作编辑技能。当前版本 V23 先核对主张和证据，按读者与体裁选择惯用表达，再修订有据但程式化的句群，检查对象、比较方向、限定、数值归属、引文和完整段落的衔接。
 
 该技能适用于新稿审查和已有稿件改写。用户提出改写要求时，主要交付物为可直接使用的修订正文；需要作者核实的事实另列。
 
@@ -27,6 +27,20 @@ git clone https://github.com/LeoAndJellyfish/academic-less-ai-tone.git "$env:USE
 > 请按 academic-less-ai-tone 修订以下讨论段。事实卡是本次改写的依据。保留比较方向、统计口径、作者解释和引用；交付完整修订段落，待核事实另列。
 
 技能按段落处理证据和表达。它审查空泛的转向、重复提示语、归属提示连用、生硬名词化及跨句指代，同时保留真实争论、操作定义和必要的统计限定。
+
+## V23 更新
+
+2026-10-18 发布。本次新增“表达与任务适配”规则，依据用户提供的[视频使用反馈](https://www.bilibili.com/video/BV1WfJr6kE6H/)核对五类问题：
+
+- 逐项核对成串修饰的实际内容与依据，保存必要的方法属性和功能差异。
+- 删除与任务无关或缺少依据的情境铺陈，保留机制解释所需的实例与条件。
+- 审查类比、递进和相邻句中的排除动作，保留真实争论、定义与统计限定。
+- 写清单次操作与多个对象或用途的对应关系，删除重复概括和无据效益。
+- 删除学术正文中的无关安抚，保留伦理程序、撤回同意及必要风险说明。
+
+新增[任务适配的成对示例](references/task-fit-style-examples.md)，逐类给出删改例和保留例。直接引语按原记录保存，完整改写继续核对有效信息、数值与限定。
+
+本次通过技能结构、引用路径、文件完整性及12个教学案例示范正文的预检。12份示范正文均由助手编写，模型实际改写效果、自然稿误删率及独立评审结果尚未测定。两个辅助脚本沿用 V22。
 
 ## V22 更新
 
@@ -74,6 +88,6 @@ python scripts/measure_body.py --input input.json --min 10 --max 80
 
 ## 版本与文件
 
-当前技能文件的 SHA-256 见 [`SHA256SUMS`](SHA256SUMS)，安装包按 GitHub Releases 的版本标签提供。V21 封存版本保留在 [v21 标签](https://github.com/LeoAndJellyfish/academic-less-ai-tone/tree/v21)与原发布附件中。`references/research-basis.md` 的历史记录按当时版本解释，外部技能的研究记录按文档名称索引。
+当前技能文件的 SHA-256 见 [`SHA256SUMS`](SHA256SUMS)，安装包按 GitHub Releases 的版本标签提供。V22 与 V21 封存版本保留在 [v22 标签](https://github.com/LeoAndJellyfish/academic-less-ai-tone/tree/v22)、[v21 标签](https://github.com/LeoAndJellyfish/academic-less-ai-tone/tree/v21)及各自的发布附件中。`references/research-basis.md` 的历史记录按当时版本解释，外部技能的研究记录按文档名称索引。
 
 代码和原创文档按 [MIT License](LICENSE) 发布。引用或复用外部研究资料时，遵守其各自的许可与引文要求。
