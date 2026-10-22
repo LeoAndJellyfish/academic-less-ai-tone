@@ -1,0 +1,4 @@
+interface:
+  display_name: "中文学术润色"
+  short_description: "核对证据与数据，重写完整句群，润色论文、讲稿及配套幻灯片"
+  default_prompt: "请使用 $academic-less-ai-tone 润色所附稿件，核对事实与论证，保持符合使用场景的自然表达，交付完整修订正文。"

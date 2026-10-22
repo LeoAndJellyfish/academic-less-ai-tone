@@ -5,3 +5,10 @@
 /scripts/claim_preflight.py -text
 /scripts/measure_body.py -text
 /references/task-fit-style-examples.md -text
+/agents/openai.yaml -text
+/LICENSE -text
+/README.md -text
+/references/evidence-and-preservation.md -text
+/references/final-style-review.md -text
+/references/lecture-and-slides.md -text
+/SHA256SUMS -text

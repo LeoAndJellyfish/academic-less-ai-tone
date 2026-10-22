@@ -1,62 +1,42 @@
 # academic-less-ai-tone
 
-面向中文学术论文、研究报告、学术讲座及技术论坛稿的写作编辑技能。当前版本 V23 先核对主张和证据，按读者与体裁选择惯用表达，再修订有据但程式化的句群，检查对象、比较方向、限定、数值归属、引文和完整段落的衔接。
+中文学术润色技能，适用于论文、研究报告、学术讲座逐字稿及配套幻灯片。当前版本为 **V24（2026-10-22）**。
 
-该技能适用于新稿审查和已有稿件改写。用户提出改写要求时，主要交付物为可直接使用的修订正文；需要作者核实的事实另列。
-
-## 安装
-
-将仓库克隆到 Codex 的技能目录：
-
-```bash
-git clone https://github.com/LeoAndJellyfish/academic-less-ai-tone.git ~/.codex/skills/academic-less-ai-tone
-```
-
-Windows PowerShell 示例：
-
-```powershell
-git clone https://github.com/LeoAndJellyfish/academic-less-ai-tone.git "$env:USERPROFILE\.codex\skills\academic-less-ai-tone"
-```
-
-现有同名目录应先自行保留，再安装本仓库。技能入口为 [`SKILL.md`](SKILL.md)；补充示例与研究依据位于 `references/`。两个辅助脚本使用 Python 标准库。
+一次调用完成事实与论证核对、完整句群改写、语气审读和交付核验。默认交付可直接使用的正文或实际修改的文件。规则和示例随包提供，写作润色无需另行调用风格技能。
 
 ## 使用
 
-向写作助手提供原稿、目标体裁、篇幅及可核实的事实卡或文献摘录，并指定使用 `academic-less-ai-tone`。例如：
+提供原稿、用途与可核实资料，指定`$academic-less-ai-tone`。已有读者、人称、篇幅、提纲和讲者样稿直接采用。
 
-> 请按 academic-less-ai-tone 修订以下讨论段。事实卡是本次改写的依据。保留比较方向、统计口径、作者解释和引用；交付完整修订段落，待核事实另列。
+> 请使用 $academic-less-ai-tone 润色这份面向社科研究生的讲座逐字稿及配套slides。核对数字、方法和结论，沿用现有提纲，采用自然、专业的讲述语气，实际更新两份文件并核验对应关系。
 
-技能按段落处理证据和表达。它审查空泛的转向、重复提示语、归属提示连用、生硬名词化及跨句指代，同时保留真实争论、操作定义和必要的统计限定。
+> 请使用 $academic-less-ai-tone 润色论文讨论段。所附事实卡为本次依据；保留引文、作者解释、比较基准与必要限定，交付完整修订正文。
 
-## V23 更新
+清楚自然的原句少改。专业术语、真实争论、操作定义、自然设问和直接引语按其功能保留。用户指定的禁用句式与编辑范围优先执行。
 
-2026-10-18 发布。本次新增“表达与任务适配”规则，依据用户提供的[视频使用反馈](https://www.bilibili.com/video/BV1WfJr6kE6H/)核对五类问题：
+## V24更新
 
-- 逐项核对成串修饰的实际内容与依据，保存必要的方法属性和功能差异。
-- 删除与任务无关或缺少依据的情境铺陈，保留机制解释所需的实例与条件。
-- 审查类比、递进和相邻句中的排除动作，保留真实争论、定义与统计限定。
-- 写清单次操作与多个对象或用途的对应关系，删除重复概括和无据效益。
-- 删除学术正文中的无关安抚，保留伦理程序、撤回同意及必要风险说明。
+- 明确连续编辑流程：核内容、改句群、审语气、核交付。正文反查与核验说明分别校对。
+- 增加讲述与幻灯片规则，处理理解顺序、刻意口语、无据经历、方法衔接、页间对应及时间估算。
+- 增加成稿表达审读，逐处处理提示壳、虚设反转、重复骨架、抽象总结和拟人夸饰，同时保留有效表达。
+- V23事实保全细则随包保留，增加完整无据主张的删除与系数尺度核验要求。
+- 入口按任务引导读取细则，增加Codex显示名称和默认提示；调用名保持`academic-less-ai-tone`。
 
-新增[任务适配的成对示例](references/task-fit-style-examples.md)，逐类给出删改例和保留例。直接引语按原记录保存，完整改写继续核对有效信息、数值与限定。
+## 安装与升级
 
-本次通过技能结构、引用路径、文件完整性及12个教学案例示范正文的预检。12份示范正文均由助手编写，模型实际改写效果、自然稿误删率及独立评审结果尚未测定。两个辅助脚本沿用 V22。
+从[GitHub Releases](https://github.com/LeoAndJellyfish/academic-less-ai-tone/releases)下载对应版本ZIP，校验SHA-256后，将其中`academic-less-ai-tone`目录安装到助手的技能目录。升级前备份现有同名目录。一个发现路径保留一份当前版本，历史备份另存。
 
-## V22 更新
+Codex可使用`~/.agents/skills/academic-less-ai-tone`或其配置的`$CODEX_HOME/skills/academic-less-ai-tone`。入口为[SKILL.md](SKILL.md)。新安装的技能通常在下一轮对话加载。
 
-2026-10-07 发布。本次修订依据工作进度摘要与信息检索课程汇报中的实际使用反馈，整合五项表达规则：
+## 文件与核验
 
-- 使用目标读者及本学科熟悉的惯用说法，解释必要术语。
-- 按阅读目的安排正文、备答和附录，保留指定信息与关键条件。
-- 围绕共同问题组织句群，明确方法、结果与下一问题的联系。
-- 展开内部流程标签和紧缩名词，写清实际对象、动作及结果。
-- 直接交代具体结果和资料缺口，保持完成报告、检查结果与用户确认的区别。
+- [主张核对与信息保全](references/evidence-and-preservation.md)：对象、数值、比较方向、范围与引文。
+- [讲述与幻灯片](references/lecture-and-slides.md)：口头语气、技术解释、配套文件与时长。
+- [成稿表达审读](references/final-style-review.md)：第二遍完整段落审读及保留条件。
+- [句群示例](references/retained-rewrite-examples.md)、[任务适配示例](references/task-fit-style-examples.md)：具体删改与保留情境。
+- [研究与验证记录](references/research-basis.md)：版本、方法、已完成检查及适用范围。
 
-完整改写逐项保留有效信息。摘要、选编和删减依用户约定执行；计数单位及专业术语按语境核对。补充示例见 [`references/retained-rewrite-examples.md`](references/retained-rewrite-examples.md)，依据与效果状态见 [`references/research-basis.md`](references/research-basis.md)。下节保留 V21 的历史开发评估。
-
-### 辅助脚本
-
-`scripts/claim_preflight.py` 接受 UTF-8 JSON 文件，其中 `source`、`draft` 和 `revision` 均为字符串，`revision` 仅填写修订正文：
+两个Python辅助脚本沿用V23，使用标准库。`scripts/claim_preflight.py`帮助定位来源外候选和信息遗漏；编辑者根据完整语句与资料裁决。`scripts/measure_body.py`按明确区间统计修订正文汉字数。
 
 ```json
 {
@@ -71,7 +51,11 @@ python scripts/claim_preflight.py --input input.json --strict
 python scripts/measure_body.py --input input.json --min 10 --max 80
 ```
 
-预检输出定位需要核查的主张和表达；编辑者依据原资料裁决。篇幅脚本统计 `revision` 字段中的汉字。`--strict` 遇到部分来源外候选时返回状态码 2；篇幅超出指定区间时，篇幅脚本也返回状态码 2。
+脚本输出候选信息。程序检查、完整正文审读、模型试写和真人评价分别报告。本轮开发包含本地小模型试写，其残留错误已登记；评价范围见研究记录。
+
+## 历史开发结果
+
+以下保留V21开发记录，各项结果按对应版本解释。
 
 ## V21 开发评估
 
@@ -88,6 +72,6 @@ python scripts/measure_body.py --input input.json --min 10 --max 80
 
 ## 版本与文件
 
-当前技能文件的 SHA-256 见 [`SHA256SUMS`](SHA256SUMS)，安装包按 GitHub Releases 的版本标签提供。V22 与 V21 封存版本保留在 [v22 标签](https://github.com/LeoAndJellyfish/academic-less-ai-tone/tree/v22)、[v21 标签](https://github.com/LeoAndJellyfish/academic-less-ai-tone/tree/v21)及各自的发布附件中。`references/research-basis.md` 的历史记录按当时版本解释，外部技能的研究记录按文档名称索引。
+当前技能文件的 SHA-256 见 [`SHA256SUMS`](SHA256SUMS)，安装包按 GitHub Releases 的版本标签提供。V23、V22与V21封存版本保留在 [v22 标签](https://github.com/LeoAndJellyfish/academic-less-ai-tone/tree/v22)、[v21 标签](https://github.com/LeoAndJellyfish/academic-less-ai-tone/tree/v21)及各自的发布附件中。`references/research-basis.md` 的历史记录按当时版本解释，外部技能的研究记录按文档名称索引。
 
 代码和原创文档按 [MIT License](LICENSE) 发布。引用或复用外部研究资料时，遵守其各自的许可与引文要求。
